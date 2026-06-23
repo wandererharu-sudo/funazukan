@@ -67,11 +67,12 @@ h1{text-align:center;font-size:1.5rem;color:#64b5f6;padding:16px 0 4px;}
   <span style="font-size:1.6rem;">&#9875;</span>
   <span style="flex:1; color:#e8eef5;">
     <span style="font-weight:700; font-size:1.05rem; color:#ffd700;">今日の名古屋港 入出港</span><br>
-    <span style="font-size:.82rem; color:#9fb3c8;">2026-06-19 の伊勢湾・常滑沖を通る船（タップで開く）</span>
+    <span style="font-size:.82rem; color:#9fb3c8;">2026-06-23 の伊勢湾・常滑沖を通る船（タップで開く）</span>
   </span>
   <span style="font-size:1.4rem; color:#64b5f6;">&rsaquo;</span>
 </div>
 <!--TODAY_SHIPS_END-->
+
 
 
 
@@ -458,6 +459,7 @@ h1{text-align:center;font-size:1.5rem;color:#64b5f6;padding:16px 0 4px;}
 
 
 
+
 <!--TODAY_SHIPS_START-->
 <div id="todayShipsModal" onclick="if(event.target===this)closeTodayShips()" style="
   display:none; position:fixed; inset:0; z-index:9999;
@@ -476,121 +478,164 @@ h1{text-align:center;font-size:1.5rem;color:#64b5f6;padding:16px 0 4px;}
 &lt;head&gt;
 &lt;meta charset=&quot;UTF-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-&lt;title&gt;今日の名古屋港 入出港 2026-06-19&lt;/title&gt;
+&lt;title&gt;名古屋港 船舶レポート 2026-06-23&lt;/title&gt;
 &lt;style&gt;
-  body { margin:0; padding:16px 14px 40px; background:#0d1117; color:#e8eef5;
-    font-family:-apple-system,&quot;Hiragino Kaku Gothic ProN&quot;,&quot;Yu Gothic&quot;,sans-serif; line-height:1.6; }
-  h1 { font-size:1.25rem; color:#ffd700; margin:0 0 2px; }
-  .date { color:#9fb3c8; font-size:.85rem; margin-bottom:16px; }
-  h2 { font-size:1.0rem; color:#64b5f6; border-left:4px solid #2f5a86; padding-left:8px; margin:24px 0 10px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; }
-  .card { background:#161b22; border:1px solid #2f5a86; border-radius:10px; padding:12px 14px; }
-  .name { font-size:1.05rem; font-weight:700; margin-bottom:4px; }
-  .namelink { color:#ffd700; text-decoration:none; }
-  .spec { font-size:.82rem; color:#9fb3c8; margin:2px 0; }
-  .io-in { color:#7ee787; } .io-out { color:#ff9b9b; } .io-mv { color:#d2a8ff; }
-  .links { margin-top:8px; display:flex; gap:8px; flex-wrap:wrap; }
-  .links a { font-size:.78rem; background:#1a3a5c; color:#cfe3f7; padding:4px 10px;
-    border-radius:8px; text-decoration:none; }
-  table { width:100%; border-collapse:collapse; font-size:.85rem; margin-top:6px; }
-  th,td { padding:6px 8px; border-bottom:1px solid #21262d; text-align:left; }
-  th { color:#9fb3c8; font-weight:600; }
-  td a { color:#cfe3f7; text-decoration:none; }
+  body {
+    margin: 0; padding: 16px;
+    background: #0d1117; color: #e8eef5;
+    font-family: -apple-system, &#x27;Hiragino Kaku Gothic ProN&#x27;, &#x27;Yu Gothic&#x27;, sans-serif;
+    line-height: 1.55;
+  }
+  h1 {
+    font-size: 1.25rem; color: #ffd700; margin: 0 0 4px;
+  }
+  .date {
+    color: #9fb3c8; font-size: .85rem; margin-bottom: 18px;
+  }
+  h2 {
+    font-size: 1.05rem; color: #ffd700; margin: 22px 0 10px;
+    border-left: 4px solid #ffd700; padding-left: 8px;
+  }
+  .cards {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px; margin-bottom: 18px;
+  }
+  .card {
+    background: linear-gradient(135deg, #13294b, #1a3a5c);
+    border: 1px solid #2f5a86; border-radius: 12px; padding: 12px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.4);
+  }
+  .card .name {
+    font-weight: 700; font-size: 1.05rem; margin-bottom: 6px;
+  }
+  .card .namelink { color: #ffd700; text-decoration: none; }
+  .card .meta {
+    color: #9fb3c8; font-size: .82rem; line-height: 1.7;
+  }
+  .card .meta b { color: #e8eef5; font-weight: 600; }
+  .btns { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 4px 9px; font-size: .76rem;
+    background: #1a3a5c; color: #e8eef5; border-radius: 6px;
+    text-decoration: none; border: 1px solid #2f5a86;
+  }
+  .btn:hover { background: #2f5a86; }
+  table {
+    width: 100%; border-collapse: collapse; margin-bottom: 18px;
+    font-size: .85rem;
+  }
+  th, td {
+    padding: 7px 8px; text-align: left;
+    border-bottom: 1px solid #2f5a86;
+  }
+  th { background: #13294b; color: #ffd700; font-weight: 600; }
+  td a { color: #64b5f6; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  .time { color: #ffd700; font-weight: 600; white-space: nowrap; }
+  .small { font-size: .75rem; color: #6a7a8c; }
   ruby { ruby-position: over; }
-  ruby rt { font-size:.55em; color:#8b98a5; font-weight:400; letter-spacing:0; }
-  .foot { color:#6e7b8a; font-size:.75rem; margin-top:20px; }
+  ruby rt { font-size: .55em; color: #8b98a5; font-weight: 400; letter-spacing: 0; }
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
-&lt;h1&gt;&amp;#9875; 今日の名古屋港 入出港&lt;/h1&gt;
-&lt;div class=&quot;date&quot;&gt;2026年6月19日（木）／ 伊勢湾・常滑沖を通る船 ・ 入港6・出港11・移動1（計18隻）&lt;/div&gt;
+&lt;h1&gt;&amp;#9875; 名古屋港 入出港レポート&lt;/h1&gt;
+&lt;div class=&quot;date&quot;&gt;2026年6月23日（火） 伊勢湾・常滑沖を通る船&lt;/div&gt;
 
 &lt;h2&gt;注目船（大型・特殊）&lt;/h2&gt;
-&lt;div class=&quot;grid&quot;&gt;
+&lt;div class=&quot;cards&quot;&gt;
 
   &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=SIRIUS+HIGHWAY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;SIRIUS HIGHWAY&lt;rt&gt;シリウス・ハイウェイ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;自動車専用船（PCC）／ 総トン数 46,182t&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;移動 06:20 ・ 出港 &lt;span class=&quot;io-out&quot;&gt;20:00&lt;/span&gt; ／ バース I-6&lt;/div&gt;
-    &lt;div class=&quot;links&quot;&gt;
-      &lt;a href=&quot;https://www.vesselfinder.com/vessels?name=SIRIUS+HIGHWAY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
-      &lt;a href=&quot;https://www.google.com/search?q=SIRIUS+HIGHWAY+car+carrier&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&amp;#128247; 写真&lt;/a&gt;
+    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=NSU+TRUST&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;NSU TRUST&lt;rt&gt;エヌエスユー・トラスト&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;meta&quot;&gt;
+      &lt;b&gt;鉱石船（バルカー）&lt;/b&gt; / 総トン数 &lt;b&gt;107,897 t&lt;/b&gt;&lt;br&gt;
+      コールサイン D5MI2 / 係留 &lt;b&gt;F11&lt;/b&gt;&lt;br&gt;
+      本日 &lt;b&gt;17:30 入港&lt;/b&gt;（管制 16:00）
+    &lt;/div&gt;
+    &lt;div class=&quot;btns&quot;&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.vesselfinder.com/vessels?name=NSU+TRUST&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.marinetraffic.com/en/ais/index/search/all?keyword=NSU%20TRUST&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.google.com/search?q=NSU+TRUST+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&amp;#128247; 画像&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=DALIAN+HIGHWAY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;DALIAN HIGHWAY&lt;rt&gt;ダイレン・ハイウェイ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;自動車専用船（PCC）／ 総トン数 31,409t&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;入港 &lt;span class=&quot;io-in&quot;&gt;05:50&lt;/span&gt; ・ 出港 &lt;span class=&quot;io-out&quot;&gt;16:50&lt;/span&gt; ／ バース C5&lt;/div&gt;
-    &lt;div class=&quot;links&quot;&gt;
-      &lt;a href=&quot;https://www.vesselfinder.com/vessels?name=DALIAN+HIGHWAY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
-      &lt;a href=&quot;https://www.google.com/search?q=DALIAN+HIGHWAY+car+carrier&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&amp;#128247; 写真&lt;/a&gt;
+    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=LANTANA+PLANET&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;K5 LANTANA PLANET&lt;rt&gt;ケーファイブ・ランタナ・プラネット&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;meta&quot;&gt;
+      &lt;b&gt;LPG船&lt;/b&gt; / 総トン数 &lt;b&gt;49,943 t&lt;/b&gt;&lt;br&gt;
+      コールサイン 3E2738 / 係留 &lt;b&gt;K5&lt;/b&gt;&lt;br&gt;
+      本日 &lt;b&gt;15:30 入港&lt;/b&gt;（管制 13:30）
+    &lt;/div&gt;
+    &lt;div class=&quot;btns&quot;&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.vesselfinder.com/vessels?name=LANTANA+PLANET&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.marinetraffic.com/en/ais/index/search/all?keyword=LANTANA%20PLANET&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.google.com/search?q=LANTANA+PLANET+LPG&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&amp;#128247; 画像&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=STRAITS+CHALLENGER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;STRAITS CHALLENGER&lt;rt&gt;ストレイツ・チャレンジャー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;自動車専用船（PCC）／ 総トン数 30,522t&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;入港 &lt;span class=&quot;io-in&quot;&gt;06:20&lt;/span&gt; ／ バース 54&lt;/div&gt;
-    &lt;div class=&quot;links&quot;&gt;
-      &lt;a href=&quot;https://www.vesselfinder.com/vessels?name=STRAITS+CHALLENGER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
-      &lt;a href=&quot;https://www.google.com/search?q=STRAITS+CHALLENGER+car+carrier&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&amp;#128247; 写真&lt;/a&gt;
+    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=BERGE+HAKODATE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;BERGE HAKODATE&lt;rt&gt;ベルゲ・ハコダテ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;meta&quot;&gt;
+      &lt;b&gt;鉱石船&lt;/b&gt; / 総トン数 &lt;b&gt;21,530 t&lt;/b&gt;&lt;br&gt;
+      コールサイン 2IKK4 / 係留 &lt;b&gt;F8&lt;/b&gt;&lt;br&gt;
+      本日 &lt;b&gt;22:30 入港&lt;/b&gt;（管制 21:00）
     &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=MARAN+GAS+KIMOLOS&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;MARAN GAS KIMOLOS&lt;rt&gt;マラン・ガス・キモロス&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;LNGタンカー（液化天然ガス運搬船・特殊）&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;入港 &lt;span class=&quot;io-in&quot;&gt;11:00&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;links&quot;&gt;
-      &lt;a href=&quot;https://www.vesselfinder.com/vessels?name=MARAN+GAS+KIMOLOS&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
-      &lt;a href=&quot;https://www.google.com/search?q=MARAN+GAS+KIMOLOS+LNG+tanker&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&amp;#128247; 写真&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=PILBARA+MARU&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;PILBARA MARU&lt;rt&gt;ピルバラ・マル&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;ばら積み船（鉱石・大型）&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;入港 &lt;span class=&quot;io-in&quot;&gt;15:50&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;links&quot;&gt;
-      &lt;a href=&quot;https://www.vesselfinder.com/vessels?name=PILBARA+MARU&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
-      &lt;a href=&quot;https://www.google.com/search?q=PILBARA+MARU+bulk+carrier&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&amp;#128247; 写真&lt;/a&gt;
+    &lt;div class=&quot;btns&quot;&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.vesselfinder.com/vessels?name=BERGE+HAKODATE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.marinetraffic.com/en/ais/index/search/all?keyword=BERGE%20HAKODATE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.google.com/search?q=BERGE+HAKODATE+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&amp;#128247; 画像&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
 &lt;/div&gt;
 
-&lt;h2&gt;今日の動き（時刻順）&lt;/h2&gt;
+&lt;h2&gt;本日の入港予定（6/23）&lt;/h2&gt;
 &lt;table&gt;
-&lt;tr&gt;&lt;th&gt;時刻&lt;/th&gt;&lt;th&gt;船名&lt;/th&gt;&lt;th&gt;動き&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;05:50&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=DALIAN+HIGHWAY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;DALIAN HIGHWAY&lt;rt&gt;ダイレン・ハイウェイ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;06:20&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=STRAITS+CHALLENGER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;STRAITS CHALLENGER&lt;rt&gt;ストレイツ・チャレンジャー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;06:20&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=SIRIUS+HIGHWAY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;SIRIUS HIGHWAY&lt;rt&gt;シリウス・ハイウェイ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-mv&quot;&gt;移動&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;09:20&lt;/td&gt;&lt;td&gt;フェリー きそ&lt;/td&gt;&lt;td class=&quot;io-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;09:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=POSITIVE+CHALLENGER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;POSITIVE CHALLENGER&lt;rt&gt;ポジティブ・チャレンジャー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;11:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=MARAN+GAS+KIMOLOS&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;MARAN GAS KIMOLOS&lt;rt&gt;マラン・ガス・キモロス&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;13:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=YN+GWANGYANG&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;YN GWANGYANG&lt;rt&gt;ワイエヌ・グァンヤン&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;15:50&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=PILBARA+MARU&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;PILBARA MARU&lt;rt&gt;ピルバラ・マル&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;16:50&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=DALIAN+HIGHWAY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;DALIAN HIGHWAY&lt;rt&gt;ダイレン・ハイウェイ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;18:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=MORNING+COMPOSER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;MORNING COMPOSER&lt;rt&gt;モーニング・コンポーザー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;18:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=PEONY+LEADER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;PEONY LEADER&lt;rt&gt;ピオニー・リーダー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;18:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=POSITIVE+CHALLENGER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;POSITIVE CHALLENGER&lt;rt&gt;ポジティブ・チャレンジャー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;18:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=RIO+KOBE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;RIO KOBE&lt;rt&gt;リオ・コウベ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;19:00&lt;/td&gt;&lt;td&gt;フェリー きそ&lt;/td&gt;&lt;td class=&quot;io-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;20:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=SIRIUS+HIGHWAY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;SIRIUS HIGHWAY&lt;rt&gt;シリウス・ハイウェイ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;20:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=CAPE+RAINBOW&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;CAPE RAINBOW&lt;rt&gt;ケープ・レインボー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;21:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=WEAVER+ARROW&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;WEAVER ARROW&lt;rt&gt;ウィーバー・アロー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;io-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;時刻&lt;/th&gt;&lt;th&gt;船名&lt;/th&gt;&lt;th&gt;船種&lt;/th&gt;&lt;th&gt;総トン数&lt;/th&gt;&lt;th&gt;係留&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;10:20&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=CAPE+PLEASURE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;CAPE PLEASURE&lt;rt&gt;ケープ・プレジャー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;F13&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;10:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=MARVEL+PELICAN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;MARVEL PELICAN&lt;rt&gt;マーベル・ペリカン&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;L-1&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;11:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=TRANS+FUTURE+6&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;TRANS FUTURE 6&lt;rt&gt;トランス・フューチャー・6&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;自動車船&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;W57&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;13:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=PANSTAR+GENIE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;PANSTAR GENIE&lt;rt&gt;パンスター・ジーニー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;RORO船&lt;/td&gt;&lt;td&gt;7,321&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;14:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=TRINITY+BLUE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;TRINITY BLUE&lt;rt&gt;トリニティ・ブルー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;鋼材船&lt;/td&gt;&lt;td&gt;9,956&lt;/td&gt;&lt;td&gt;84&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;15:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=LANTANA+PLANET&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;K5 LANTANA PLANET&lt;rt&gt;ケーファイブ・ランタナ・プラネット&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;LPG船&lt;/td&gt;&lt;td&gt;49,943&lt;/td&gt;&lt;td&gt;K5&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;17:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=KEOYOUNG+BLUE+7&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;KEOYOUNG BLUE 7&lt;rt&gt;キョヨン・ブルー・7&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;外航ケミカル船&lt;/td&gt;&lt;td&gt;1,119&lt;/td&gt;&lt;td&gt;B8&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;17:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=NSU+TRUST&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;NSU TRUST&lt;rt&gt;エヌエスユー・トラスト&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;鉱石船&lt;/td&gt;&lt;td&gt;107,897&lt;/td&gt;&lt;td&gt;F11&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;18:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=SITC+YOKKAICHI&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;SITC YOKKAICHI&lt;rt&gt;エスアイティーシー・ヨッカイチ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;フルコンテナ船&lt;/td&gt;&lt;td&gt;9,566&lt;/td&gt;&lt;td&gt;T1&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;22:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=HAIAN+EAST&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;HAIAN EAST&lt;rt&gt;ハイアン・イースト&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;フルコンテナ船&lt;/td&gt;&lt;td&gt;18,102&lt;/td&gt;&lt;td&gt;R3&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;22:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=BERGE+HAKODATE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;BERGE HAKODATE&lt;rt&gt;ベルゲ・ハコダテ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;鉱石船&lt;/td&gt;&lt;td&gt;21,530&lt;/td&gt;&lt;td&gt;F8&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2&gt;明日(6/20)の大物&lt;/h2&gt;
+&lt;h2&gt;本日の出港予定（6/23）&lt;/h2&gt;
 &lt;table&gt;
-&lt;tr&gt;&lt;th&gt;時刻&lt;/th&gt;&lt;th&gt;船名&lt;/th&gt;&lt;th&gt;総トン数&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;20:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=GRANDE+HALIFAX&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;GRANDE HALIFAX&lt;rt&gt;グランデ・ハリファックス&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;（PCC）&lt;/td&gt;&lt;td&gt;62,134t&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;17:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=DON+JUAN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;DON JUAN&lt;rt&gt;ドン・フアン&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;（PCC）&lt;/td&gt;&lt;td&gt;55,598t&lt;/td&gt;&lt;/tr&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;時刻&lt;/th&gt;&lt;th&gt;船名&lt;/th&gt;&lt;th&gt;係留&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;12:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=LILY+PROMENADE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;LILY PROMENADE&lt;rt&gt;リリー・プロムナード&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;K-5&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;12:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=DALIAN+HIGHWAY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;DALIAN HIGHWAY&lt;rt&gt;ダーリエン・ハイウェイ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;W56&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;14:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=VENUS+LEADER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;VENUS LEADER&lt;rt&gt;ヴィーナス・リーダー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;W81&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;17:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=EVER+BLINK&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;EVER BLINK&lt;rt&gt;エバー・ブリンク&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;R-3&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;17:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=HANSA+STEINBURG&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;HANSA STEINBURG&lt;rt&gt;ハンザ・シュタインブルク&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;T-1&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;19:00&lt;/td&gt;&lt;td&gt;フェリー きそ&lt;/td&gt;&lt;td&gt;V-2&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;div class=&quot;foot&quot;&gt;出典：名古屋港管理組合 外航船一覧／海上保安庁 名古屋港管制 水路入航予定。時刻・トン数は予定で変動あり。船名タップでVesselFinderの詳細（写真・現在地・スペック）が開きます。&lt;/div&gt;
+&lt;h2&gt;明日の入港予定（6/24）&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;時刻&lt;/th&gt;&lt;th&gt;船名&lt;/th&gt;&lt;th&gt;係留&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;05:50&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=MISIKAN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;MISIKAN&lt;rt&gt;ミシカン&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;B-W&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;06:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=SAIC+ANJI+SINCERITY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;SAIC ANJI SINCERITY&lt;rt&gt;サイック・アンジー・シンセリティ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;W59&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;06:20&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=TETHYS+HIGHWAY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;TETHYS HIGHWAY&lt;rt&gt;テティス・ハイウェイ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;I-6&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;06:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=MALAYSIA+GRACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;MALAYSIA GRACE&lt;rt&gt;マレーシア・グレース&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;W53&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&quot;time&quot;&gt;09:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=NYK+PAULA&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;NYK PAULA&lt;rt&gt;エヌワイケー・ポーラ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;TS2&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;small&quot;&gt;
+  データ取得：名古屋港管理組合 外航船一覧／海上保安庁 名古屋港管制（2026-06-23 取得）&lt;br&gt;
+  在港中の注目船：GAIA LEADER (32,701 t 自動車船)、YM PLUM (64,254 t コンテナ船)、EVER BLINK (32,691 t)、VENUS LEADER (25,911 t)
+&lt;/div&gt;
 
 &lt;/body&gt;
 &lt;/html&gt;
