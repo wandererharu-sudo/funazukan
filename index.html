@@ -56,9 +56,11 @@ h1{text-align:center;font-size:1.5rem;color:#64b5f6;padding:16px 0 4px;}
 .hist-list{margin:0;padding-left:18px;}
 .hist-list li{font-size:.8rem;color:#fde68a;margin-bottom:5px;line-height:1.5;}
 </style>
+
 <!--PWGATE_START-->
 <style id="pwgate-style">
-  html.pwgate-locked body { display: none !important; }
+  /* 未認証時はoverlay以外を全部隠す（bodyごと隠すとoverlayまで消えるのでNG） */
+  html.pwgate-locked body > *:not(#pwgate-overlay) { display: none !important; }
   #pwgate-overlay {
     position: fixed; inset: 0; z-index: 99999;
     background: #0d1117; color: #e8eef5;
