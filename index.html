@@ -56,6 +56,87 @@ h1{text-align:center;font-size:1.5rem;color:#64b5f6;padding:16px 0 4px;}
 .hist-list{margin:0;padding-left:18px;}
 .hist-list li{font-size:.8rem;color:#fde68a;margin-bottom:5px;line-height:1.5;}
 </style>
+<!--PWGATE_START-->
+<style id="pwgate-style">
+  html.pwgate-locked body { display: none !important; }
+  #pwgate-overlay {
+    position: fixed; inset: 0; z-index: 99999;
+    background: #0d1117; color: #e8eef5;
+    display: flex; align-items: center; justify-content: center;
+    font-family: -apple-system, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  }
+  #pwgate-overlay .box {
+    background: linear-gradient(135deg,#13294b,#1a3a5c);
+    border: 1px solid #2f5a86; border-radius: 14px;
+    padding: 28px 26px; width: min(360px, 88vw);
+    box-shadow: 0 8px 30px rgba(0,0,0,.6);
+    text-align: center;
+  }
+  #pwgate-overlay h2 { margin: 0 0 14px; color: #ffd700; font-size: 1.1rem; }
+  #pwgate-overlay input {
+    width: 100%; padding: 10px 12px; font-size: 1rem;
+    border: 1px solid #2f5a86; border-radius: 8px;
+    background: #0d1117; color: #e8eef5; box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  #pwgate-overlay button {
+    width: 100%; padding: 10px; font-size: 1rem; font-weight: 600;
+    background: #ffd700; color: #13294b; border: none; border-radius: 8px;
+    cursor: pointer;
+  }
+  #pwgate-overlay .err { color: #ff8888; font-size: .85rem; min-height: 1.2em; margin-top: 8px; }
+</style>
+<script id="pwgate-script">
+(function() {
+  var PW_HASH = "f7738ba8646a4e143dac20eb76c3ee61bb5107f891a034f0c833dd43aaf88341";
+  var KEY = "funazukan_pw_ok";
+  // 既に同セッションで認証済みなら何もしない
+  try {
+    if (sessionStorage.getItem(KEY) === "1") return;
+  } catch (e) { /* sessionStorage使えなくても続行 */ }
+  // 本体を隠す
+  document.documentElement.classList.add("pwgate-locked");
+  // SHA-256
+  async function sha256(s) {
+    var buf = new TextEncoder().encode(s);
+    var h = await crypto.subtle.digest("SHA-256", buf);
+    return Array.from(new Uint8Array(h)).map(function(b){return b.toString(16).padStart(2,"0");}).join("");
+  }
+  function showGate() {
+    var ov = document.createElement("div");
+    ov.id = "pwgate-overlay";
+    ov.innerHTML =
+      '<div class="box">' +
+        '<h2>&#9875; 船図鑑</h2>' +
+        '<input id="pwgate-input" type="password" placeholder="パスワードを入力" autocomplete="off" autofocus>' +
+        '<button id="pwgate-btn">開く</button>' +
+        '<div class="err" id="pwgate-err"></div>' +
+      '</div>';
+    document.body.appendChild(ov);
+    var input = document.getElementById("pwgate-input");
+    var btn = document.getElementById("pwgate-btn");
+    var err = document.getElementById("pwgate-err");
+    async function tryUnlock() {
+      var v = input.value;
+      if (!v) { input.focus(); return; }
+      var h = await sha256(v);
+      if (h === PW_HASH) {
+        try { sessionStorage.setItem(KEY, "1"); } catch (e) {}
+        ov.remove();
+        document.documentElement.classList.remove("pwgate-locked");
+      } else {
+        err.textContent = "パスワードが違います";
+        input.value = ""; input.focus();
+      }
+    }
+    btn.addEventListener("click", tryUnlock);
+    input.addEventListener("keydown", function(e) { if (e.key === "Enter") tryUnlock(); });
+  }
+  if (document.body) { showGate(); }
+  else { document.addEventListener("DOMContentLoaded", showGate); }
+})();
+</script>
+<!--PWGATE_END-->
 </head>
 <body>
 <!--TODAY_SHIPS_START-->
