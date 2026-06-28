@@ -69,6 +69,7 @@ h1{text-align:center;font-size:1.5rem;color:#64b5f6;padding:16px 0 4px;}
 
 
 
+
 <!--PWGATE_START-->
 <style id="pwgate-style">
   /* 未認証時はoverlay以外を全部隠す（bodyごと隠すとoverlayまで消えるのでNG） */
@@ -162,11 +163,12 @@ h1{text-align:center;font-size:1.5rem;color:#64b5f6;padding:16px 0 4px;}
   <span style="font-size:1.6rem;">&#9875;</span>
   <span style="flex:1; color:#e8eef5;">
     <span style="font-weight:700; font-size:1.05rem; color:#ffd700;">今日の名古屋港 入出港</span><br>
-    <span style="font-size:.82rem; color:#9fb3c8;">2026-06-28 の伊勢湾・常滑沖を通る船（タップで開く）</span>
+    <span style="font-size:.82rem; color:#9fb3c8;">2026-06-29 の伊勢湾・常滑沖を通る船（タップで開く）</span>
   </span>
   <span style="font-size:1.4rem; color:#64b5f6;">&rsaquo;</span>
 </div>
 <!--TODAY_SHIPS_END-->
+
 
 
 
@@ -579,6 +581,7 @@ h1{text-align:center;font-size:1.5rem;color:#64b5f6;padding:16px 0 4px;}
 
 
 
+
 <!--TODAY_SHIPS_START-->
 <div id="todayShipsModal" onclick="if(event.target===this)closeTodayShips()" style="
   display:none; position:fixed; inset:0; z-index:9999;
@@ -592,215 +595,216 @@ h1{text-align:center;font-size:1.5rem;color:#64b5f6;padding:16px 0 4px;}
         background:#1a3a5c; color:#e8eef5; border:none; border-radius:8px;
         padding:6px 14px; font-size:1rem; cursor:pointer;">&times; 閉じる</button>
     </div>
-    <iframe id="todayShipsFrame" srcdoc="&lt;!DOCTYPE html&gt;
+    <iframe id="todayShipsFrame" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ja&quot;&gt;
 &lt;head&gt;
-&lt;meta charset=&quot;UTF-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-&lt;title&gt;名古屋港 入出港レポート 2026-06-28&lt;/title&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;title&gt;名古屋港 船舶レポート 2026-06-29&lt;/title&gt;
 &lt;style&gt;
-  :root {
-    --bg: #0f1419;
-    --card: #1a2129;
-    --card2: #232c36;
-    --accent: #ffd700;
-    --text: #e6edf3;
-    --sub: #8b98a5;
-    --line: #2d3742;
-    --green: #58d68d;
-    --red: #ec7063;
-    --blue: #5dade2;
-  }
+  :root { color-scheme: dark; }
   * { box-sizing: border-box; }
-  body {
-    margin: 0; padding: 16px;
-    background: var(--bg); color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Hiragino Sans&quot;, &quot;Yu Gothic UI&quot;, sans-serif;
-    line-height: 1.55;
-  }
-  h1 { font-size: 1.4em; margin: 0 0 4px 0; color: var(--accent); }
-  .date { color: var(--sub); font-size: .9em; margin-bottom: 18px; }
-  h2 { font-size: 1.1em; margin: 26px 0 10px 0; padding-left: 10px; border-left: 4px solid var(--accent); }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 12px;
-    margin-bottom: 14px;
-  }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 14px;
-  }
-  .card .name {
-    font-size: 1.05em;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: var(--accent);
-  }
-  .namelink { color: var(--accent); text-decoration: none; }
-  .namelink:hover { text-decoration: underline; }
-  .card .meta { font-size: .85em; color: var(--sub); margin-bottom: 8px; }
-  .card .spec { font-size: .88em; }
-  .card .spec div { margin: 2px 0; }
-  .card .spec .label { color: var(--sub); display: inline-block; min-width: 4.5em; }
-  .links { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
-  .links a {
-    font-size: .78em;
-    padding: 3px 8px;
-    border-radius: 12px;
-    background: var(--card2);
-    color: var(--text);
-    text-decoration: none;
-    border: 1px solid var(--line);
-  }
-  table { width: 100%; border-collapse: collapse; font-size: .9em; margin-bottom: 10px; }
-  th, td { padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--line); }
-  th { color: var(--sub); font-weight: 500; font-size: .85em; }
-  td a { color: var(--text); text-decoration: none; }
-  td a:hover { color: var(--accent); }
-  .time { font-variant-numeric: tabular-nums; color: var(--blue); }
-  .in { color: var(--green); font-weight: 600; }
-  .out { color: var(--red); font-weight: 600; }
-  .photo { font-size: .9em; margin-left: 4px; opacity: .7; text-decoration: none; }
-  .note { font-size: .8em; color: var(--sub); margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--line); }
+  body { margin: 0; background: #0b1320; color: #e6edf3; font-family: -apple-system, BlinkMacSystemFont, &quot;Hiragino Sans&quot;, &quot;Yu Gothic&quot;, sans-serif; padding: 16px; line-height: 1.55; }
+  h1 { font-size: 1.35rem; margin: 0 0 4px; }
+  .sub { color: #8b98a5; font-size: .85rem; margin-bottom: 18px; }
+  h2 { font-size: 1.05rem; margin: 24px 0 10px; padding-bottom: 6px; border-bottom: 1px solid #243044; color: #ffd700; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+  .card { background: linear-gradient(180deg,#152034,#0f1828); border: 1px solid #243044; border-radius: 12px; padding: 14px; }
+  .card .name { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+  .card .namelink { color: #ffd700; text-decoration: none; }
+  .card .meta { color: #8b98a5; font-size: .8rem; margin-bottom: 10px; }
+  .card dl { display: grid; grid-template-columns: 6.5em 1fr; gap: 4px 10px; margin: 0 0 10px; font-size: .85rem; }
+  .card dt { color: #8b98a5; }
+  .card dd { margin: 0; }
+  .btns { display: flex; gap: 6px; flex-wrap: wrap; }
+  .btn { font-size: .78rem; padding: 5px 9px; border-radius: 999px; border: 1px solid #2a3a55; text-decoration: none; color: #cfd8e3; background: #1a2538; }
+  .btn:hover { background: #243355; }
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  th, td { padding: 7px 8px; text-align: left; border-bottom: 1px solid #1d2840; }
+  th { background: #131c2c; color: #8b98a5; font-weight: 500; font-size: .78rem; }
+  td a { color: #9fd6ff; text-decoration: none; }
+  .cat-in  { color: #4ade80; font-weight: 600; }
+  .cat-out { color: #fb923c; font-weight: 600; }
+  .cat-mv  { color: #60a5fa; font-weight: 600; }
+  .pill { display: inline-block; font-size: .7rem; padding: 1px 7px; border-radius: 999px; background: #243044; color: #cfd8e3; margin-left: 6px; }
+  .photo { font-size: .78rem; }
   ruby { ruby-position: over; }
   ruby rt { font-size: .55em; color: #8b98a5; font-weight: 400; letter-spacing: 0; }
+  @media (max-width: 480px) {
+    body { padding: 12px; }
+    .card dl { grid-template-columns: 6em 1fr; }
+    th, td { padding: 6px 5px; font-size: .8rem; }
+  }
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
-&lt;h1&gt;名古屋港 入出港レポート&lt;/h1&gt;
-&lt;div class=&quot;date&quot;&gt;2026年6月28日（日）／常滑沖通過船&lt;/div&gt;
+&lt;h1&gt;🚢 名古屋港 船舶レポート&lt;/h1&gt;
+&lt;div class=&quot;sub&quot;&gt;2026年6月29日（月）— 常滑沖（伊勢湾航路）を通過する船&lt;/div&gt;
 
-&lt;h2&gt;注目船（3万t以上・大型コンテナ船）&lt;/h2&gt;
-&lt;div class=&quot;grid&quot;&gt;
+&lt;h2&gt;⭐ 注目船（大型・特殊）&lt;/h2&gt;
+&lt;div class=&quot;cards&quot;&gt;
 
   &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=AMBER+ARROW&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;AMBER ARROW&lt;rt&gt;アンバー・アロー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div class=&quot;meta&quot;&gt;自動車専用船（PCC）／本日入港&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;総トン数&lt;/span&gt;36,858 t&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;入港&lt;/span&gt;&lt;span class=&quot;time&quot;&gt;09:30&lt;/span&gt;（管制 08:30）&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;出港&lt;/span&gt;&lt;span class=&quot;time&quot;&gt;20:00&lt;/span&gt;（管制 19:00）&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;バース&lt;/span&gt;W78（金城ふ頭）&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;links&quot;&gt;
-      &lt;a href=&quot;https://www.vesselfinder.com/vessels?name=AMBER+ARROW&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
-      &lt;a href=&quot;https://www.marinetraffic.com/en/ais/details/ships/shipname:AMBER%20ARROW&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
-      &lt;a href=&quot;https://www.google.com/search?tbm=isch&amp;q=AMBER+ARROW+car+carrier+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷 写真&lt;/a&gt;
+    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=ONE+MISSION&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;ONE MISSION&lt;rt&gt;ワン・ミッション&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;meta&quot;&gt;フルコンテナ船 / 入港 7/1 09:00 着桟&lt;span class=&quot;pill&quot;&gt;超大型&lt;/span&gt;&lt;/div&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;総トン数&lt;/dt&gt;&lt;dd&gt;78,316 t&lt;/dd&gt;
+      &lt;dt&gt;コールサイン&lt;/dt&gt;&lt;dd&gt;V7VS5&lt;/dd&gt;
+      &lt;dt&gt;係留バース&lt;/dt&gt;&lt;dd&gt;TS2(飛島ふ頭南側)&lt;/dd&gt;
+      &lt;dt&gt;船種&lt;/dt&gt;&lt;dd&gt;コンテナ船（ONE社運航）&lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;div class=&quot;btns&quot;&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.vesselfinder.com/vessels?name=ONE+MISSION&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.marinetraffic.com/en/ais/details/ships/shipid:0?vessel=ONE%20MISSION&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
+      &lt;a class=&quot;btn photo&quot; href=&quot;https://www.google.com/search?q=ONE+MISSION+container+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷写真&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=SEBRING&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;SEBRING&lt;rt&gt;セブリング&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div class=&quot;meta&quot;&gt;自動車専用船（PCC）／本日入出港&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;総トン数&lt;/span&gt;25,050 t&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;入港&lt;/span&gt;&lt;span class=&quot;time&quot;&gt;07:10&lt;/span&gt;&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;出港&lt;/span&gt;&lt;span class=&quot;time&quot;&gt;15:00&lt;/span&gt;&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;バース&lt;/span&gt;W-7&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;links&quot;&gt;
-      &lt;a href=&quot;https://www.vesselfinder.com/vessels?name=SEBRING&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
-      &lt;a href=&quot;https://www.marinetraffic.com/en/ais/details/ships/shipname:SEBRING&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
-      &lt;a href=&quot;https://www.google.com/search?tbm=isch&amp;q=SEBRING+car+carrier+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷 写真&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=CMA+CGM+FORT+SAINT+CHARLES&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;CMA CGM FORT SAINT CHARLES&lt;rt&gt;シーエムエー・シージーエム・フォート・サン・シャルル&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div class=&quot;meta&quot;&gt;大型コンテナ船／本日入出港&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;船種&lt;/span&gt;フルコンテナ船&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;入港&lt;/span&gt;&lt;span class=&quot;time&quot;&gt;09:10&lt;/span&gt;&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;出港&lt;/span&gt;&lt;span class=&quot;time&quot;&gt;18:10&lt;/span&gt;&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;バース&lt;/span&gt;TS2（飛島ふ頭南）&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;links&quot;&gt;
-      &lt;a href=&quot;https://www.vesselfinder.com/vessels?name=CMA+CGM+FORT+SAINT+CHARLES&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
-      &lt;a href=&quot;https://www.marinetraffic.com/en/ais/details/ships/shipname:CMA%20CGM%20FORT%20SAINT%20CHARLES&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
-      &lt;a href=&quot;https://www.google.com/search?tbm=isch&amp;q=CMA+CGM+FORT+SAINT+CHARLES+container+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷 写真&lt;/a&gt;
+    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=VIKING+ADVENTURE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;VIKING ADVENTURE&lt;rt&gt;バイキング・アドベンチャー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;meta&quot;&gt;自動車専用船 (PCC) / 入港 6/30 02:30&lt;/div&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;総トン数&lt;/dt&gt;&lt;dd&gt;39,878 t&lt;/dd&gt;
+      &lt;dt&gt;コールサイン&lt;/dt&gt;&lt;dd&gt;V7A5091&lt;/dd&gt;
+      &lt;dt&gt;係留バース&lt;/dt&gt;&lt;dd&gt;57&lt;/dd&gt;
+      &lt;dt&gt;船種&lt;/dt&gt;&lt;dd&gt;自動車運搬船&lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;div class=&quot;btns&quot;&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.vesselfinder.com/vessels?name=VIKING+ADVENTURE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.marinetraffic.com/en/ais/details/ships/shipid:0?vessel=VIKING%20ADVENTURE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
+      &lt;a class=&quot;btn photo&quot; href=&quot;https://www.google.com/search?q=VIKING+ADVENTURE+car+carrier&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷写真&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=WAN+HAI+335&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;WAN HAI 335&lt;rt&gt;ワンハイ 335&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div class=&quot;meta&quot;&gt;コンテナ船（萬海航運・台湾）／本日深夜入港&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;船種&lt;/span&gt;フルコンテナ船&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;入港&lt;/span&gt;&lt;span class=&quot;time&quot;&gt;21:20&lt;/span&gt;&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;バース&lt;/span&gt;W92（飛島ふ頭）&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;links&quot;&gt;
-      &lt;a href=&quot;https://www.vesselfinder.com/vessels?name=WAN+HAI+335&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
-      &lt;a href=&quot;https://www.marinetraffic.com/en/ais/details/ships/shipname:WAN%20HAI%20335&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
-      &lt;a href=&quot;https://www.google.com/search?tbm=isch&amp;q=WAN+HAI+335+container+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷 写真&lt;/a&gt;
+    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=GARNET+ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;GARNET ACE&lt;rt&gt;ガーネット・エース&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;meta&quot;&gt;自動車専用船 (PCC) / 入港 6/30 06:00&lt;/div&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;総トン数&lt;/dt&gt;&lt;dd&gt;38,482 t&lt;/dd&gt;
+      &lt;dt&gt;コールサイン&lt;/dt&gt;&lt;dd&gt;3FTC4&lt;/dd&gt;
+      &lt;dt&gt;係留バース&lt;/dt&gt;&lt;dd&gt;81 → C5&lt;/dd&gt;
+      &lt;dt&gt;船種&lt;/dt&gt;&lt;dd&gt;自動車運搬船（商船三井系）&lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;div class=&quot;btns&quot;&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.vesselfinder.com/vessels?name=GARNET+ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.marinetraffic.com/en/ais/details/ships/shipid:0?vessel=GARNET%20ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
+      &lt;a class=&quot;btn photo&quot; href=&quot;https://www.google.com/search?q=GARNET+ACE+car+carrier&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷写真&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=IBN+AL+ABBAR&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;IBN AL ABBAR&lt;rt&gt;イブン・アル・アッバール&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div class=&quot;meta&quot;&gt;コンテナ船（UASC系）／明朝未明入港&lt;/div&gt;
-    &lt;div class=&quot;spec&quot;&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;船種&lt;/span&gt;フルコンテナ船&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;入港&lt;/span&gt;&lt;span class=&quot;time&quot;&gt;01:30&lt;/span&gt;（29日未明）&lt;/div&gt;
-      &lt;div&gt;&lt;span class=&quot;label&quot;&gt;バース&lt;/span&gt;T-2（鍋田ふ頭）&lt;/div&gt;
+    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=LIBERTY+ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;LIBERTY ACE&lt;rt&gt;リバティ・エース&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;meta&quot;&gt;自動車専用船 (PCC) / 入港 6/29 18:00（05:50 港内着）&lt;/div&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;総トン数&lt;/dt&gt;&lt;dd&gt;38,382 t&lt;/dd&gt;
+      &lt;dt&gt;コールサイン&lt;/dt&gt;&lt;dd&gt;7KAY&lt;/dd&gt;
+      &lt;dt&gt;係留バース&lt;/dt&gt;&lt;dd&gt;53&lt;/dd&gt;
+      &lt;dt&gt;船種&lt;/dt&gt;&lt;dd&gt;自動車運搬船（商船三井系）&lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;div class=&quot;btns&quot;&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.vesselfinder.com/vessels?name=LIBERTY+ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.marinetraffic.com/en/ais/details/ships/shipid:0?vessel=LIBERTY%20ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
+      &lt;a class=&quot;btn photo&quot; href=&quot;https://www.google.com/search?q=LIBERTY+ACE+car+carrier&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷写真&lt;/a&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;links&quot;&gt;
-      &lt;a href=&quot;https://www.vesselfinder.com/vessels?name=IBN+AL+ABBAR&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
-      &lt;a href=&quot;https://www.marinetraffic.com/en/ais/details/ships/shipname:IBN%20AL%20ABBAR&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
-      &lt;a href=&quot;https://www.google.com/search?tbm=isch&amp;q=IBN+AL+ABBAR+container+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷 写真&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;card&quot;&gt;
+    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=BRILLIANT+ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;BRILLIANT ACE&lt;rt&gt;ブリリアント・エース&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;meta&quot;&gt;自動車専用船 (PCC) / 入港 6/29 15:00・出港 15:00&lt;/div&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;総トン数&lt;/dt&gt;&lt;dd&gt;37,602 t&lt;/dd&gt;
+      &lt;dt&gt;コールサイン&lt;/dt&gt;&lt;dd&gt;HPAK&lt;/dd&gt;
+      &lt;dt&gt;係留バース&lt;/dt&gt;&lt;dd&gt;77&lt;/dd&gt;
+      &lt;dt&gt;船種&lt;/dt&gt;&lt;dd&gt;自動車運搬船（パナマ船籍）&lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;div class=&quot;btns&quot;&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.vesselfinder.com/vessels?name=BRILLIANT+ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.marinetraffic.com/en/ais/details/ships/shipid:0?vessel=BRILLIANT%20ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
+      &lt;a class=&quot;btn photo&quot; href=&quot;https://www.google.com/search?q=BRILLIANT+ACE+car+carrier&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷写真&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;card&quot;&gt;
+    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=RHEA+LEADER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;&lt;ruby&gt;RHEA LEADER&lt;rt&gt;レア・リーダー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;meta&quot;&gt;自動車専用船 (PCC) / 入港 6/29 17:30・出港 17:30&lt;/div&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;総トン数&lt;/dt&gt;&lt;dd&gt;32,862 t&lt;/dd&gt;
+      &lt;dt&gt;コールサイン&lt;/dt&gt;&lt;dd&gt;7JDK&lt;/dd&gt;
+      &lt;dt&gt;係留バース&lt;/dt&gt;&lt;dd&gt;I-6&lt;/dd&gt;
+      &lt;dt&gt;船種&lt;/dt&gt;&lt;dd&gt;自動車運搬船（日本郵船系）&lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;div class=&quot;btns&quot;&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.vesselfinder.com/vessels?name=RHEA+LEADER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.marinetraffic.com/en/ais/details/ships/shipid:0?vessel=RHEA%20LEADER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MarineTraffic&lt;/a&gt;
+      &lt;a class=&quot;btn photo&quot; href=&quot;https://www.google.com/search?q=RHEA+LEADER+car+carrier&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷写真&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;card&quot;&gt;
+    &lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=ferry+ishikari&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;namelink&quot;&gt;フェリー いしかり&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;meta&quot;&gt;旅客船 (太平洋フェリー) / 入港 09:40・出港 19:00&lt;span class=&quot;pill&quot;&gt;定期便&lt;/span&gt;&lt;/div&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;航路&lt;/dt&gt;&lt;dd&gt;名古屋 ⇔ 仙台 ⇔ 苫小牧&lt;/dd&gt;
+      &lt;dt&gt;運航&lt;/dt&gt;&lt;dd&gt;太平洋フェリー&lt;/dd&gt;
+      &lt;dt&gt;備考&lt;/dt&gt;&lt;dd&gt;常滑沖を夜19:00頃通過予定&lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;div class=&quot;btns&quot;&gt;
+      &lt;a class=&quot;btn&quot; href=&quot;https://www.vesselfinder.com/vessels?name=ferry+ishikari&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;VesselFinder&lt;/a&gt;
+      &lt;a class=&quot;btn photo&quot; href=&quot;https://www.google.com/search?q=フェリーいしかり+太平洋フェリー&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷写真&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
 &lt;/div&gt;
 
-&lt;h2&gt;本日の入港（8隻）&lt;/h2&gt;
+&lt;h2&gt;🌅 今日の入港・出港・移動（時刻順）&lt;/h2&gt;
 &lt;table&gt;
-  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;時刻&lt;/th&gt;&lt;th&gt;船名&lt;/th&gt;&lt;th&gt;バース&lt;/th&gt;&lt;th&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th style=&quot;width:5.5em&quot;&gt;時刻&lt;/th&gt;&lt;th&gt;船名&lt;/th&gt;&lt;th style=&quot;width:4em&quot;&gt;区分&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
   &lt;tbody&gt;
-    &lt;tr&gt;&lt;td class=&quot;time in&quot;&gt;07:10&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=SEBRING&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;SEBRING&lt;rt&gt;セブリング&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;W-7&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=SEBRING+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time in&quot;&gt;09:10&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=CMA+CGM+FORT+SAINT+CHARLES&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;CMA CGM FORT SAINT CHARLES&lt;rt&gt;シーエムエー・シージーエム・フォート・サン・シャルル&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;TS2&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=CMA+CGM+FORT+SAINT+CHARLES+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time in&quot;&gt;09:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=AMBER+ARROW&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;AMBER ARROW&lt;rt&gt;アンバー・アロー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;W78&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=AMBER+ARROW+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time in&quot;&gt;15:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=LYDDEN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;LYDDEN&lt;rt&gt;リドゥン&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;W56&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=LYDDEN+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time in&quot;&gt;17:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=W-STAR&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;W-STAR&lt;rt&gt;ダブリュー・スター&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;F13&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=W-STAR+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time in&quot;&gt;21:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=ADDISON&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;ADDISON&lt;rt&gt;アディソン&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;TS1&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=ADDISON+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time in&quot;&gt;21:20&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=WAN+HAI+335&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;WAN HAI 335&lt;rt&gt;ワンハイ 335&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;W92&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=WAN+HAI+335+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time in&quot;&gt;01:30&lt;small&gt;（翌）&lt;/small&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=IBN+AL+ABBAR&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;IBN AL ABBAR&lt;rt&gt;イブン・アル・アッバール&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;T-2&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=IBN+AL+ABBAR+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;05:50&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=LIBERTY+ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;LIBERTY ACE&lt;rt&gt;リバティ・エース&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=LIBERTY+ACE+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;06:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=PADMA+LEADER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;PADMA LEADER&lt;rt&gt;パドマ・リーダー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=PADMA+LEADER+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;06:20&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=RHEA+LEADER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;RHEA LEADER&lt;rt&gt;レア・リーダー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=RHEA+LEADER+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;06:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=VIKING+ADVENTURE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;VIKING ADVENTURE&lt;rt&gt;バイキング・アドベンチャー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=VIKING+ADVENTURE+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;09:40&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=ferry+ishikari&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;フェリー いしかり&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=フェリーいしかり&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;11:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=ADDISON&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;ADDISON&lt;rt&gt;アディソン&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=ADDISON+vessel&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;12:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=WAN+HAI+335&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;WAN HAI 335&lt;rt&gt;ワンハイ 335&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=WAN+HAI+335+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;12:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=IBN+AL+ABBAR&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;IBN AL ABBAR&lt;rt&gt;イブン・アル・アッバル&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=IBN+AL+ABBAR+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;13:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=PADMA+LEADER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;PADMA LEADER&lt;rt&gt;パドマ・リーダー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-mv&quot;&gt;移動&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;13:40&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=GRAND+LEGACY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;GRAND LEGACY&lt;rt&gt;グランド・レガシー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=GRAND+LEGACY+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;15:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=BRILLIANT+ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;BRILLIANT ACE&lt;rt&gt;ブリリアント・エース&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=BRILLIANT+ACE+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;17:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=JIN+YUN+HE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;JIN YUN HE&lt;rt&gt;ジン・ユン・ホー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=JIN+YUN+HE+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;17:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=RHEA+LEADER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;RHEA LEADER&lt;rt&gt;レア・リーダー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;18:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=ONE+MISSION&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;ONE MISSION&lt;rt&gt;ワン・ミッション&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=ONE+MISSION+container+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;19:00&lt;/td&gt;&lt;td&gt;フェリー いしかり&lt;/td&gt;&lt;td class=&quot;cat-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;20:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=GRAND+LEGACY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;GRAND LEGACY&lt;rt&gt;グランド・レガシー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;21:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=HERCULES+LEADER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;HERCULES LEADER&lt;rt&gt;ヘラクレス・リーダー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=HERCULES+LEADER+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;21:40&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=TRANS+HARMONY+1&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;TRANS HARMONY 1&lt;rt&gt;トランス・ハーモニー 1&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=TRANS+HARMONY+1+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;22:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=WAN+HAI+271&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;WAN HAI 271&lt;rt&gt;ワンハイ 271&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=WAN+HAI+271+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;23:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=青葉山丸&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;青葉山丸&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=青葉山丸+船&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2&gt;本日の出港（7隻）&lt;/h2&gt;
+&lt;h2&gt;🌙 明日（6/30）未明の動き&lt;/h2&gt;
 &lt;table&gt;
-  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;時刻&lt;/th&gt;&lt;th&gt;船名&lt;/th&gt;&lt;th&gt;バース&lt;/th&gt;&lt;th&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th style=&quot;width:5.5em&quot;&gt;時刻&lt;/th&gt;&lt;th&gt;船名&lt;/th&gt;&lt;th style=&quot;width:4em&quot;&gt;区分&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
   &lt;tbody&gt;
-    &lt;tr&gt;&lt;td class=&quot;time out&quot;&gt;10:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=GAIA+LEADER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;GAIA LEADER&lt;rt&gt;ガイア・リーダー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;W56&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=GAIA+LEADER+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time out&quot;&gt;12:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=BERGE+HAKODATE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;BERGE HAKODATE&lt;rt&gt;バージ・ハコダテ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;F-8&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=BERGE+HAKODATE+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time out&quot;&gt;15:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=SEBRING&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;SEBRING&lt;rt&gt;セブリング&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;W-7&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=SEBRING+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time out&quot;&gt;16:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=BANGKOK+HIGHWAY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;BANGKOK HIGHWAY&lt;rt&gt;バンコク・ハイウェイ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;I-6&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=BANGKOK+HIGHWAY+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time out&quot;&gt;18:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=SERENITY+HIGHWAY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;SERENITY HIGHWAY&lt;rt&gt;セレニティ・ハイウェイ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;W77&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=SERENITY+HIGHWAY+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time out&quot;&gt;18:10&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=CMA+CGM+FORT+SAINT+CHARLES&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;CMA CGM FORT SAINT CHARLES&lt;rt&gt;シーエムエー・シージーエム・フォート・サン・シャルル&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;TS2&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=CMA+CGM+FORT+SAINT+CHARLES+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time out&quot;&gt;20:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=AMBER+ARROW&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;AMBER ARROW&lt;rt&gt;アンバー・アロー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;W78&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?tbm=isch&amp;q=AMBER+ARROW+ship&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;01:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=JIN+YUN+HE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;JIN YUN HE&lt;rt&gt;ジン・ユン・ホー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;02:30&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=VIKING+ADVENTURE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;VIKING ADVENTURE&lt;rt&gt;バイキング・アドベンチャー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;05:10&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=LYDDEN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;LYDDEN&lt;rt&gt;リデン&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=LYDDEN+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-out&quot;&gt;出港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;06:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=GARNET+ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;GARNET ACE&lt;rt&gt;ガーネット・エース&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=GARNET+ACE+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;20:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=HIBIKI&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;HIBIKI&lt;rt&gt;ヒビキ&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt; &lt;a class=&quot;photo&quot; href=&quot;https://www.google.com/search?q=HIBIKI+cargo+ship&amp;tbm=isch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;📷&lt;/a&gt;&lt;/td&gt;&lt;td class=&quot;cat-in&quot;&gt;入港&lt;/td&gt;&lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2&gt;明日（6/29）の主要入港&lt;/h2&gt;
-&lt;table&gt;
-  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;時刻&lt;/th&gt;&lt;th&gt;船名&lt;/th&gt;&lt;th&gt;船種&lt;/th&gt;&lt;th&gt;総トン数&lt;/th&gt;&lt;th&gt;バース&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;&lt;td class=&quot;time in&quot;&gt;05:50&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=LIBERTY+ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;LIBERTY ACE&lt;rt&gt;リバティ・エース&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;自動車専用船&lt;/td&gt;&lt;td&gt;38,382&lt;/td&gt;&lt;td&gt;(53)&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time in&quot;&gt;06:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=BRILLIANT+ACE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;BRILLIANT ACE&lt;rt&gt;ブリリアント・エース&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;自動車専用船&lt;/td&gt;&lt;td&gt;37,602&lt;/td&gt;&lt;td&gt;(77)&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time in&quot;&gt;06:25&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=VIKING+ADVENTURE&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;VIKING ADVENTURE&lt;rt&gt;ヴァイキング・アドベンチャー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;自動車専用船&lt;/td&gt;&lt;td&gt;39,878&lt;/td&gt;&lt;td&gt;(57)&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td class=&quot;time in&quot;&gt;13:00&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;https://www.vesselfinder.com/vessels?name=PADMA+LEADER&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;ruby&gt;PADMA LEADER&lt;rt&gt;パドマ・リーダー&lt;/rt&gt;&lt;/ruby&gt;&lt;/a&gt;&lt;/td&gt;&lt;td&gt;自動車専用船&lt;/td&gt;&lt;td&gt;49,416&lt;/td&gt;&lt;td&gt;(7)&lt;/td&gt;&lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;h2&gt;🛟 補足&lt;/h2&gt;
+&lt;p style=&quot;font-size:.85rem; color:#cfd8e3;&quot;&gt;
+本日は自動車専用船（PCC）が6隻同時運用で多め。早朝 05:50〜06:30 に5隻の大型船が連続入港し、伊良湖水道〜常滑沖を未明〜明け方に通過した見込み。&lt;br&gt;
+最大船は &lt;strong&gt;ONE MISSION（78,316t）&lt;/strong&gt; ですが、入港は7/1朝のため伊良湖水道通過は6/30夜〜7/1未明の見込み。
+&lt;/p&gt;
 
-&lt;div class=&quot;note&quot;&gt;
-データソース：名古屋港管理組合（外航船入出港情報）／海上保安庁（名古屋港管制 水路入航予定）&lt;br&gt;
-常滑沖通過の目安：入港船は伊良湖水道→常滑沖まで約2.5時間。出港船は記載時刻の約2〜3時間後に常滑沖を北→南へ通過。&lt;br&gt;
-生成時刻：2026-06-28 朝
+&lt;div class=&quot;sub&quot; style=&quot;margin-top:24px;&quot;&gt;
+  データソース：名古屋港管理組合（公式入港予定）／海上保安庁 名古屋港管制 水路入航予定&lt;br&gt;
+  生成：2026-06-29　みこ（船舶レポート）
 &lt;/div&gt;
 
 &lt;/body&gt;
